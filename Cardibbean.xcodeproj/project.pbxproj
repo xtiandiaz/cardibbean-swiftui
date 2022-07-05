@@ -7,18 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		982B9D252874BB7D003D3AD3 /* BerilioUI in Frameworks */ = {isa = PBXBuildFile; productRef = 982B9D242874BB7D003D3AD3 /* BerilioUI */; };
+		982B9D272874BBBF003D3AD3 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982B9D262874BBBF003D3AD3 /* CardView.swift */; };
 		98E34CB92874907B00930789 /* CardibbeanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E34CB82874907B00930789 /* CardibbeanApp.swift */; };
 		98E34CBB2874907B00930789 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E34CBA2874907B00930789 /* ContentView.swift */; };
 		98E34CBD2874907C00930789 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98E34CBC2874907C00930789 /* Assets.xcassets */; };
 		98E34CC02874907C00930789 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98E34CBF2874907C00930789 /* Preview Assets.xcassets */; };
+		98E34CCA287490D300930789 /* Emerald in Frameworks */ = {isa = PBXBuildFile; productRef = 98E34CC9287490D300930789 /* Emerald */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		982B9D232874BB6C003D3AD3 /* BerilioUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = BerilioUI; sourceTree = "<group>"; };
+		982B9D262874BBBF003D3AD3 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardView.swift; path = Source/CardView.swift; sourceTree = "<group>"; };
 		98E34CB52874907B00930789 /* Cardibbean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cardibbean.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98E34CB82874907B00930789 /* CardibbeanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardibbeanApp.swift; sourceTree = "<group>"; };
 		98E34CBA2874907B00930789 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		98E34CBC2874907C00930789 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98E34CBF2874907C00930789 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		98E34CC7287490CC00930789 /* Emerald */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Emerald; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +32,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98E34CCA287490D300930789 /* Emerald in Frameworks */,
+				982B9D252874BB7D003D3AD3 /* BerilioUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -35,8 +43,10 @@
 		98E34CAC2874907B00930789 = {
 			isa = PBXGroup;
 			children = (
+				98E34CC6287490CC00930789 /* Packages */,
 				98E34CB72874907B00930789 /* Cardibbean */,
 				98E34CB62874907B00930789 /* Products */,
+				98E34CC8287490D300930789 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -53,6 +63,7 @@
 			children = (
 				98E34CB82874907B00930789 /* CardibbeanApp.swift */,
 				98E34CBA2874907B00930789 /* ContentView.swift */,
+				982B9D262874BBBF003D3AD3 /* CardView.swift */,
 				98E34CBC2874907C00930789 /* Assets.xcassets */,
 				98E34CBE2874907C00930789 /* Preview Content */,
 			);
@@ -65,6 +76,22 @@
 				98E34CBF2874907C00930789 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		98E34CC6287490CC00930789 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				98E34CC7287490CC00930789 /* Emerald */,
+				982B9D232874BB6C003D3AD3 /* BerilioUI */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		98E34CC8287490D300930789 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +110,10 @@
 			dependencies = (
 			);
 			name = Cardibbean;
+			packageProductDependencies = (
+				98E34CC9287490D300930789 /* Emerald */,
+				982B9D242874BB7D003D3AD3 /* BerilioUI */,
+			);
 			productName = Cardibbean;
 			productReference = 98E34CB52874907B00930789 /* Cardibbean.app */;
 			productType = "com.apple.product-type.application";
@@ -138,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98E34CBB2874907B00930789 /* ContentView.swift in Sources */,
+				982B9D272874BBBF003D3AD3 /* CardView.swift in Sources */,
 				98E34CB92874907B00930789 /* CardibbeanApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,8 +307,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -286,7 +320,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -304,8 +338,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +351,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -341,6 +377,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		982B9D242874BB7D003D3AD3 /* BerilioUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BerilioUI;
+		};
+		98E34CC9287490D300930789 /* Emerald */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Emerald;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 98E34CAD2874907B00930789 /* Project object */;
 }

@@ -5,12 +5,18 @@
 //  Created by Cristian Diaz on 5.7.2022.
 //
 
+import Emerald
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        HStack {
+            CardView(card: .preview)
+            CardView(card: .preview)
+            CardView(card: .preview)
+        }
+        .padding()
     }
 }
 
