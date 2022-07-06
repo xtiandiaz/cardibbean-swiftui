@@ -1,5 +1,5 @@
 //
-//  CardView.swift
+//  DemoCard.swift
 //  Cardibbean
 //
 //  Created by Cristian Diaz on 5.7.2022.
@@ -9,41 +9,56 @@ import BerilioUI
 import Emerald
 import SwiftUI
 
-struct CardFace {
+enum DemoCardType {
     
+    case player
+}
+
+struct DemoCardFace: CardFace {
+    
+    let type: DemoCardType
     let value: Int
     let motif: String
-    let borderColor: Color?
     let backgroundColor: Color
+    let borderColor: Color?
 }
 
-struct Card {
+struct DemoCard: Card {
     
-    let front: CardFace
-    let back: CardFace
+    let front: DemoCardFace
+    let back: DemoCardFace
+    
+    func canInteract(with other: DemoCard) -> Bool {
+        false
+    }
+    
+    func interact(with other: DemoCard) {
+    }
 }
 
-extension Card {
+extension DemoCard {
     
-    static let preview = Card(
+    static let preview = DemoCard(
         front: .init(
+            type: .player,
             value: 10,
             motif: "😀",
-            borderColor: nil,
-            backgroundColor: .rey
+            backgroundColor: .rey,
+            borderColor: nil
         ),
         back: .init(
+            type: .player,
             value: 10,
             motif: "😛",
-            borderColor: .rey,
-            backgroundColor: .estuco
+            backgroundColor: .estuco,
+            borderColor: .rey
         )
     )
 }
 
-struct CardFaceView: View {
+struct DemoCardFaceView: CardFaceView  {
     
-    let face: CardFace
+    let face: DemoCardFace
     
     var body: some View {
         ZStack {
@@ -73,15 +88,19 @@ struct CardFaceView: View {
     private let cornerRadius: CGFloat = 8
 }
 
-struct CardView: View {
+struct DemoCardView: CardView {
     
-    let card: Card
+    let card: DemoCard
     
     @State var side: FlipSide = .front
     
+    var aspectRatio: CGSize {
+        CGSize(width: 1, height: 1.25)
+    }
+    
     var body: some View {
         ZStack {
-            CardFaceView(face: card.back)
+            DemoCardFaceView(face: card.back)
                 .rotation3DEffect(
                     .degrees(side == .back ? 0 : -90), axis: (x: 0, y: 1, z: 0)
                 )
@@ -90,7 +109,7 @@ struct CardView: View {
                     value: side
                 )
             
-            CardFaceView(face: card.front)
+            DemoCardFaceView(face: card.front)
                 .rotation3DEffect(
                     .degrees(side == .front ? 0 : 90), axis: (x: 0, y: 1, z: 0)
                 )
@@ -99,7 +118,7 @@ struct CardView: View {
                     value: side
                 )
         }
-        .aspectRatio(CGSize(width: 1, height: 1.25), contentMode: .fit)
+        .aspectRatio(aspectRatio, contentMode: .fit)
         .onTapGesture {
             side.toggle()
         }
@@ -108,7 +127,7 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(card: .preview)
+        DemoCardView(card: .preview)
             .frame(width: 100)
     }
 }

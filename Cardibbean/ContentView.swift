@@ -12,11 +12,11 @@ struct ContentView: View {
     
     var body: some View {
         HStack {
-            CardView(card: .preview)
-            CardView(card: .preview)
-            CardView(card: .preview)
+            DemoCardView(card: .preview)
+            DemoCardView(card: .preview)
+            DemoCardView(card: .preview)
         }
-        .padding()
+        .padding([.horizontal], .l)
     }
 }
 

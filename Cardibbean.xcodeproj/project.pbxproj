@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		982B9D252874BB7D003D3AD3 /* BerilioUI in Frameworks */ = {isa = PBXBuildFile; productRef = 982B9D242874BB7D003D3AD3 /* BerilioUI */; };
-		982B9D272874BBBF003D3AD3 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982B9D262874BBBF003D3AD3 /* CardView.swift */; };
+		982B9D272874BBBF003D3AD3 /* DemoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982B9D262874BBBF003D3AD3 /* DemoCard.swift */; };
 		98E34CB92874907B00930789 /* CardibbeanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E34CB82874907B00930789 /* CardibbeanApp.swift */; };
 		98E34CBB2874907B00930789 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E34CBA2874907B00930789 /* ContentView.swift */; };
 		98E34CBD2874907C00930789 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98E34CBC2874907C00930789 /* Assets.xcassets */; };
@@ -18,7 +18,7 @@
 
 /* Begin PBXFileReference section */
 		982B9D232874BB6C003D3AD3 /* BerilioUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = BerilioUI; sourceTree = "<group>"; };
-		982B9D262874BBBF003D3AD3 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardView.swift; path = Source/CardView.swift; sourceTree = "<group>"; };
+		982B9D262874BBBF003D3AD3 /* DemoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DemoCard.swift; path = Source/DemoCard.swift; sourceTree = "<group>"; };
 		98E34CB52874907B00930789 /* Cardibbean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cardibbean.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98E34CB82874907B00930789 /* CardibbeanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardibbeanApp.swift; sourceTree = "<group>"; };
 		98E34CBA2874907B00930789 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,7 +63,7 @@
 			children = (
 				98E34CB82874907B00930789 /* CardibbeanApp.swift */,
 				98E34CBA2874907B00930789 /* ContentView.swift */,
-				982B9D262874BBBF003D3AD3 /* CardView.swift */,
+				982B9D262874BBBF003D3AD3 /* DemoCard.swift */,
 				98E34CBC2874907C00930789 /* Assets.xcassets */,
 				98E34CBE2874907C00930789 /* Preview Content */,
 			);
@@ -169,7 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98E34CBB2874907B00930789 /* ContentView.swift in Sources */,
-				982B9D272874BBBF003D3AD3 /* CardView.swift in Sources */,
+				982B9D272874BBBF003D3AD3 /* DemoCard.swift in Sources */,
 				98E34CB92874907B00930789 /* CardibbeanApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
