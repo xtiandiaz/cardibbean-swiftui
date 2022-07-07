@@ -23,8 +23,9 @@ struct DemoCardFace: CardFace {
     let borderColor: Color?
 }
 
-struct DemoCard: Card {
+struct DemoCard: Card, Identifiable {
     
+    let id = UUID()
     let front: DemoCardFace
     let back: DemoCardFace
     
@@ -62,14 +63,7 @@ struct DemoCardFaceView: CardFaceView  {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: cornerRadius, style: .circular)
-                .fill(face.backgroundColor)
-                .overlay {
-                    if let borderColor = face.borderColor {
-                        RoundedRectangle(cornerRadius: cornerRadius, style: .circular)
-                            .strokeBorder(borderColor, lineWidth: 4)
-                    }
-                }
+            Self.shapeView(backgroundColor: face.backgroundColor, borderColor: face.borderColor)
             
             Text("\(face.value)")
                 .font(.title, weight: .bold)
@@ -82,10 +76,22 @@ struct DemoCardFaceView: CardFaceView  {
                 .offset(y: .s)
         }
     }
+}
+
+extension DemoCardFaceView {
     
-    // MARK: - Private
+    static let cornerRadius: CGFloat = 8
     
-    private let cornerRadius: CGFloat = 8
+    static func shapeView(backgroundColor: Color, borderColor: Color? = nil) -> some View {
+        RoundedRectangle(cornerRadius: cornerRadius, style: .circular)
+            .fill(backgroundColor)
+            .overlay {
+                if let borderColor = borderColor {
+                    RoundedRectangle(cornerRadius: cornerRadius, style: .circular)
+                        .strokeBorder(borderColor, lineWidth: 4)
+                }
+            }
+    }
 }
 
 struct DemoCardView: CardView {
@@ -95,7 +101,7 @@ struct DemoCardView: CardView {
     @State var side: FlipSide = .front
     
     var aspectRatio: CGSize {
-        CGSize(width: 1, height: 1.25)
+        Self.aspectRatio
     }
     
     var body: some View {
@@ -123,6 +129,11 @@ struct DemoCardView: CardView {
             side.toggle()
         }
     }
+}
+
+extension DemoCardView {
+    
+    static let aspectRatio = CGSize(width: 1, height: 1.25)
 }
 
 struct CardView_Previews: PreviewProvider {

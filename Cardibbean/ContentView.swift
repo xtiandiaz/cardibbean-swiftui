@@ -10,13 +10,24 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @StateObject private var demoSpace = DemoSpace()
+    
     var body: some View {
-        HStack {
-            DemoCardView(card: .preview)
-            DemoCardView(card: .preview)
-            DemoCardView(card: .preview)
+        VStack {
+            DemoSpaceView(space: demoSpace)
+                .frame(width: 100)
+            
+            Button("Add Card") {
+                demoSpace.place(token: DemoCard.preview)
+            }
+            .padding([.top], .xxl)
         }
-        .padding([.horizontal], .l)
+//        HStack {
+//            DemoCardView(card: .preview)
+//            DemoCardView(card: .preview)
+//            DemoCardView(card: .preview)
+//        }
+//        .padding([.horizontal], .l)
     }
 }
 
