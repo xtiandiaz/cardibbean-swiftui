@@ -13,25 +13,20 @@ import SwiftUI
 class DemoSpace: StackSpace<DemoCard> {
 }
 
-struct DemoSpaceView: CollectionSpaceView {
+struct DemoSpaceView: View {
     
     @ObservedObject private(set) var space: DemoSpace
     
-    init(space: DemoSpace) {
-        self.space = space
-    }
-    
     var body: some View {
-        ZStack {
+        CollectionSpaceView(space: space) { index, count, token in
+            DemoCardView(card: token)
+                .offset(x: 0, y: .s * index)
+                .zIndex(count - index)
+                .brightness(-0.25 * Double(index) / count)
+        } placeholder: {
             DemoCardFaceView.shapeView(backgroundColor: .black.withAlphaComponent(0.25))
-                .aspectRatio(DemoCardView.aspectRatio, contentMode: .fit)
-            
-            ForEach(Array(zip(space.collection.indices, space.collection)), id: \.0) { index, card in
-                DemoCardView(card: card)
-                    .offset(x: 0, y: .s * index)
-                    .zIndex(space.collection.count - index)
-                    .brightness((-Double(index) / space.collection.count) * 0.25)
-            }
+                .aspectRatio(CGSize(width: 1, height: 1.25), contentMode: .fit)
         }
+        .frame(width: 100)
     }
 }

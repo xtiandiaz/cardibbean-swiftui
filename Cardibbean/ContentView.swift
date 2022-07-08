@@ -5,6 +5,7 @@
 //  Created by Cristian Diaz on 5.7.2022.
 //
 
+import Beryllium
 import Emerald
 import SwiftUI
 
@@ -15,19 +16,19 @@ struct ContentView: View {
     var body: some View {
         VStack {
             DemoSpaceView(space: demoSpace)
-                .frame(width: 100)
             
-            Button("Add Card") {
-                demoSpace.place(token: DemoCard.preview)
+            HStack {
+                Button("Add Card") {
+                    demoSpace.place(token: DemoCard.create(
+                        for: [.player, .merchant, .monster(.kraken), .pirate(.lieutenant)].randomElement()!
+                    ))
+                }
+                Button("Remove Card") {
+                    demoSpace.take(at: .zero)
+                }
             }
             .padding([.top], .xxl)
         }
-//        HStack {
-//            DemoCardView(card: .preview)
-//            DemoCardView(card: .preview)
-//            DemoCardView(card: .preview)
-//        }
-//        .padding([.horizontal], .l)
     }
 }
 

@@ -8,9 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		982B9D252874BB7D003D3AD3 /* BerilioUI in Frameworks */ = {isa = PBXBuildFile; productRef = 982B9D242874BB7D003D3AD3 /* BerilioUI */; };
-		982B9D272874BBBF003D3AD3 /* DemoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982B9D262874BBBF003D3AD3 /* DemoCard.swift */; };
 		982B9D2D28765583003D3AD3 /* DemoBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982B9D2C28765583003D3AD3 /* DemoBoard.swift */; };
 		982B9D2F2877252E003D3AD3 /* DemoSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982B9D2E2877252E003D3AD3 /* DemoSpace.swift */; };
+		982B9D352878865F003D3AD3 /* CardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982B9D342878865F003D3AD3 /* CardType.swift */; };
+		982B9D37287886A7003D3AD3 /* CardAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982B9D36287886A6003D3AD3 /* CardAttribute.swift */; };
+		982B9D3928788714003D3AD3 /* DemoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982B9D3828788714003D3AD3 /* DemoCardView.swift */; };
+		982B9D3B28788748003D3AD3 /* DemoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982B9D3A28788748003D3AD3 /* DemoCard.swift */; };
+		982B9D3D2878880E003D3AD3 /* DemoCardFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982B9D3C2878880E003D3AD3 /* DemoCardFace.swift */; };
+		982B9D3F287889FE003D3AD3 /* DemoCardFaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982B9D3E287889FE003D3AD3 /* DemoCardFaceView.swift */; };
 		98E34CB92874907B00930789 /* CardibbeanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E34CB82874907B00930789 /* CardibbeanApp.swift */; };
 		98E34CBB2874907B00930789 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E34CBA2874907B00930789 /* ContentView.swift */; };
 		98E34CBD2874907C00930789 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98E34CBC2874907C00930789 /* Assets.xcassets */; };
@@ -20,9 +25,14 @@
 
 /* Begin PBXFileReference section */
 		982B9D232874BB6C003D3AD3 /* BerilioUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = BerilioUI; sourceTree = "<group>"; };
-		982B9D262874BBBF003D3AD3 /* DemoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DemoCard.swift; path = Source/DemoCard.swift; sourceTree = "<group>"; };
 		982B9D2C28765583003D3AD3 /* DemoBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DemoBoard.swift; path = Source/DemoBoard.swift; sourceTree = "<group>"; };
 		982B9D2E2877252E003D3AD3 /* DemoSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DemoSpace.swift; path = Source/DemoSpace.swift; sourceTree = "<group>"; };
+		982B9D342878865F003D3AD3 /* CardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardType.swift; path = Source/CardType.swift; sourceTree = "<group>"; };
+		982B9D36287886A6003D3AD3 /* CardAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardAttribute.swift; path = Source/CardAttribute.swift; sourceTree = "<group>"; };
+		982B9D3828788714003D3AD3 /* DemoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DemoCardView.swift; path = Source/DemoCardView.swift; sourceTree = "<group>"; };
+		982B9D3A28788748003D3AD3 /* DemoCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DemoCard.swift; path = Source/DemoCard.swift; sourceTree = "<group>"; };
+		982B9D3C2878880E003D3AD3 /* DemoCardFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DemoCardFace.swift; path = Source/DemoCardFace.swift; sourceTree = "<group>"; };
+		982B9D3E287889FE003D3AD3 /* DemoCardFaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DemoCardFaceView.swift; path = Source/DemoCardFaceView.swift; sourceTree = "<group>"; };
 		98E34CB52874907B00930789 /* Cardibbean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cardibbean.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98E34CB82874907B00930789 /* CardibbeanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardibbeanApp.swift; sourceTree = "<group>"; };
 		98E34CBA2874907B00930789 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +54,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		982B9D322878864D003D3AD3 /* Board */ = {
+			isa = PBXGroup;
+			children = (
+				982B9D3328788653003D3AD3 /* Card */,
+			);
+			name = Board;
+			sourceTree = "<group>";
+		};
+		982B9D3328788653003D3AD3 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				982B9D3A28788748003D3AD3 /* DemoCard.swift */,
+				982B9D3E287889FE003D3AD3 /* DemoCardFaceView.swift */,
+				982B9D3C2878880E003D3AD3 /* DemoCardFace.swift */,
+				982B9D3828788714003D3AD3 /* DemoCardView.swift */,
+				982B9D342878865F003D3AD3 /* CardType.swift */,
+				982B9D36287886A6003D3AD3 /* CardAttribute.swift */,
+			);
+			name = Card;
+			sourceTree = "<group>";
+		};
 		98E34CAC2874907B00930789 = {
 			isa = PBXGroup;
 			children = (
@@ -67,8 +98,8 @@
 			children = (
 				98E34CB82874907B00930789 /* CardibbeanApp.swift */,
 				98E34CBA2874907B00930789 /* ContentView.swift */,
-				982B9D262874BBBF003D3AD3 /* DemoCard.swift */,
 				982B9D2E2877252E003D3AD3 /* DemoSpace.swift */,
+				982B9D322878864D003D3AD3 /* Board */,
 				982B9D2C28765583003D3AD3 /* DemoBoard.swift */,
 				98E34CBC2874907C00930789 /* Assets.xcassets */,
 				98E34CBE2874907C00930789 /* Preview Content */,
@@ -174,11 +205,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				982B9D3D2878880E003D3AD3 /* DemoCardFace.swift in Sources */,
+				982B9D3B28788748003D3AD3 /* DemoCard.swift in Sources */,
 				98E34CBB2874907B00930789 /* ContentView.swift in Sources */,
-				982B9D272874BBBF003D3AD3 /* DemoCard.swift in Sources */,
+				982B9D352878865F003D3AD3 /* CardType.swift in Sources */,
 				982B9D2F2877252E003D3AD3 /* DemoSpace.swift in Sources */,
 				98E34CB92874907B00930789 /* CardibbeanApp.swift in Sources */,
 				982B9D2D28765583003D3AD3 /* DemoBoard.swift in Sources */,
+				982B9D37287886A7003D3AD3 /* CardAttribute.swift in Sources */,
+				982B9D3F287889FE003D3AD3 /* DemoCardFaceView.swift in Sources */,
+				982B9D3928788714003D3AD3 /* DemoCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
