@@ -13,22 +13,35 @@ struct ContentView: View {
     
     @StateObject private var space = DemoSpace()
     
+    init() {
+        UITableView.appearance().backgroundColor = .clear
+    }
+    
     var body: some View {
         VStack {
             DemoSpaceView(space: space)
                 .padding([.vertical], .xl)
             
             Form {
-                HStack {
-                    Stepper("\(space.tokenCount) cards") {
-                        space.place(token: card())
-                    } onDecrement: {
-                        _ = space.take(at: .zero)
+                Group {
+                    HStack {
+                        Stepper("\(space.tokenCount) cards") {
+                            space.place(token: card())
+                        } onDecrement: {
+                            _ = space.take(at: .zero)
+                        }
+                        .tint(.berilo)
                     }
+                    
+                    Toggle("Should highlight", isOn: $space.isHighlighted)
+                        .tint(.berilo)
                 }
-                
-                Toggle("Should highlight", isOn: $space.isHighlighted)
+                .listRowSeparatorTint(.greenwich)
+                .listRowBackground(Color.blancox)
             }
+            .foregroundColor(.crudo)
+            .background(Color.estuco)
+            .accentColor(.berilo)
         }
     }
     

@@ -24,10 +24,10 @@ struct DemoSpaceView: View {
                 .zIndex(count - index)
                 .brightness(-0.25 * Double(index) / count)
         } placeholder: {
-            DemoCardFaceView.shapeView(backgroundColor: .black.withAlphaComponent(0.25))
+            DemoCardFaceView.shapeView(backgroundColor: .estuco)
                 .aspectRatio(CGSize(width: 1, height: 1.25), contentMode: .fit)
         } highlight: {
-            DemoCardFaceView.shapeView(backgroundColor: .clear, borderColor: .green)
+            DemoCardFaceView.shapeView(backgroundColor: .clear, borderColor: .berilo)
                 .aspectRatio(CGSize(width: 1, height: 1.25), contentMode: .fit)
                 .transition(.opacity)
         }
