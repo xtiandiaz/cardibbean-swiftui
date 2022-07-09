@@ -11,24 +11,31 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @StateObject private var demoSpace = DemoSpace()
+    @StateObject private var space = DemoSpace()
     
     var body: some View {
         VStack {
-            DemoSpaceView(space: demoSpace)
+            DemoSpaceView(space: space)
+                .padding([.vertical], .xl)
             
-            HStack {
-                Button("Add Card") {
-                    demoSpace.place(token: DemoCard.create(
-                        for: [.player, .merchant, .monster(.kraken), .pirate(.lieutenant)].randomElement()!
-                    ))
+            Form {
+                HStack {
+                    Stepper("\(space.tokenCount) cards") {
+                        space.place(token: card())
+                    } onDecrement: {
+                        _ = space.take(at: .zero)
+                    }
                 }
-                Button("Remove Card") {
-                    demoSpace.take(at: .zero)
-                }
+                
+                Toggle("Should highlight", isOn: $space.isHighlighted)
             }
-            .padding([.top], .xxl)
         }
+    }
+    
+    // MARK: - Private
+    
+    private func card() -> DemoCard {
+        DemoCard.create(for: [.player, .merchant, .monster(.kraken), .pirate(.lieutenant)].randomElement()!)
     }
 }
 
