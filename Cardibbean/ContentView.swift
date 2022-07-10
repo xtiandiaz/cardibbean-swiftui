@@ -6,12 +6,14 @@
 //
 
 import Beryllium
+import Combine
 import Emerald
 import SwiftUI
 
 struct ContentView: View {
     
-    @StateObject private var space = DemoSpace()
+    @StateObject private var board = DemoBoard()
+    @State private var shouldHighlight = false
     
     init() {
         UITableView.appearance().backgroundColor = .clear
@@ -19,22 +21,34 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            DemoSpaceView(space: space)
+            BoardView(board: board) { spaces in
+                HStack {
+                    ForEach(spaces) {
+                        DemoSpaceView(space: $0)
+                    }
+                }
                 .padding([.vertical], .xl)
+            }
             
             Form {
                 Group {
                     HStack {
-                        Stepper("\(space.tokenCount) cards") {
-                            space.place(token: card())
+                        Stepper("\(board.spaces.first!.tokenCount) cards") {
+                            board.spaces.first!.place(token: card())
                         } onDecrement: {
-                            _ = space.take(at: .zero)
+                            _ = board.spaces.first!.take(at: .zero)
                         }
                         .tint(.berilo)
                     }
                     
-                    Toggle("Should highlight", isOn: $space.isHighlighted)
+                    Toggle("Should highlight", isOn: $shouldHighlight)
                         .tint(.berilo)
+                    
+                    Button("Transfer") {
+                        if let card = board.spaces.first!.take(at: .zero) {
+                            board.spaces.last!.place(token: card)
+                        }
+                    }
                 }
                 .listRowSeparatorTint(.greenwich)
                 .listRowBackground(Color.blancox)
@@ -42,6 +56,9 @@ struct ContentView: View {
             .foregroundColor(.crudo)
             .background(Color.estuco)
             .accentColor(.berilo)
+            .onChange(of: shouldHighlight) {
+                board.setSpacesHighlighted($0, for: nil)
+            }
         }
     }
     

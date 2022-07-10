@@ -7,8 +7,12 @@
 
 import Beryllium
 import Emerald
+import Foundation
+import SwiftUI
 
-struct DemoBoard: Board {
+class DemoBoard: Board<DemoSpace> {
     
-    let spaces: [DemoSpace]
+    init() {
+        super.init(spaces: [DemoSpace(), DemoSpace()])
+    }
 }
