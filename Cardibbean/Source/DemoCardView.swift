@@ -5,6 +5,7 @@
 //  Created by Cristian Diaz on 8.7.2022.
 //
 
+import Beryllium
 import Emerald
 import Foundation
 import SwiftUI
@@ -21,7 +22,7 @@ struct DemoCardView: View {
         CardView(card: card) {
             DemoCardFaceView(face: $0)
         } back: {
-            DemoCardFaceView(face: $0)
+            DemoCardFaceView(face: $0!)
         }
         .aspectRatio(CGSize(width: 1, height: 1.25), contentMode: .fit)
         .onTapGesture {

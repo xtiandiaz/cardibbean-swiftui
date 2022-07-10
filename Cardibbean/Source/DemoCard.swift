@@ -15,7 +15,7 @@ class DemoCard: Card {
     
     let id = UUID()
     let front: DemoCardFace
-    let back: DemoCardFace
+    let back: DemoCardFace?
     
     init(front: DemoCardFace, back: DemoCardFace) {
         self.front = front
