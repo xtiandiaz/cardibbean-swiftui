@@ -9,7 +9,7 @@ import Emerald
 import Foundation
 import SwiftUI
 
-struct DemoCardFace: CardFace {
+struct DemoCardFace: FlatTokenFace {
     
     let id = UUID()
     let side: FlipSide

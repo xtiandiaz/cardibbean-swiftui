@@ -9,7 +9,7 @@ import Emerald
 import Foundation
 import SwiftUI
 
-struct DemoCardFaceView: CardFaceView {
+struct DemoCardFaceView: FlatTokenFaceView {
     
     let face: DemoCardFace
     

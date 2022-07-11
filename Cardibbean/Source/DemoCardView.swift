@@ -19,7 +19,7 @@ struct DemoCardView: View {
     }
     
     var body: some View {
-        CardView(card: card) {
+        FlatTokenView(token: card) {
             DemoCardFaceView(face: $0)
         } back: {
             DemoCardFaceView(face: $0!)

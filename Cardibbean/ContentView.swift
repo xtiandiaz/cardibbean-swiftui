@@ -13,7 +13,6 @@ import SwiftUI
 struct ContentView: View {
     
     @StateObject private var board = DemoBoard()
-    @State private var shouldHighlight = false
     
     init() {
         UITableView.appearance().backgroundColor = .clear
@@ -41,12 +40,12 @@ struct ContentView: View {
                         .tint(.berilo)
                     }
                     
-                    Toggle("Should highlight", isOn: $shouldHighlight)
-                        .tint(.berilo)
-                    
                     Button("Transfer") {
-                        if let card = board.spaces.first!.take(at: .zero) {
-                            board.spaces.last!.place(token: card)
+                        withAnimation(.easeOut) {
+                            if let card = board.spaces.first!.take(at: .zero) {
+                                board.spaces.last!.place(token: card)
+//                                _ = board.spaces.first!.take(at: .zero)
+                            }
                         }
                     }
                 }
@@ -56,9 +55,6 @@ struct ContentView: View {
             .foregroundColor(.crudo)
             .background(Color.estuco)
             .accentColor(.berilo)
-            .onChange(of: shouldHighlight) {
-                board.setSpacesHighlighted($0, for: nil)
-            }
         }
     }
     

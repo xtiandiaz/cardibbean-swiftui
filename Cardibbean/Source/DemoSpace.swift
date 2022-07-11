@@ -21,7 +21,6 @@ struct DemoSpaceView: View {
         CollectionSpaceView(space: space) { index, count, token in
             DemoCardView(card: token)
                 .offset(x: 0, y: .s * index)
-                .zIndex(count - index)
                 .brightness(-0.25 * Double(index) / count)
         } placeholder: {
             DemoCardFaceView.shapeView(backgroundColor: .estuco)

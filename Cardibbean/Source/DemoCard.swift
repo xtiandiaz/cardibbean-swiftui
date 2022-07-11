@@ -9,17 +9,18 @@ import BerilioUI
 import Emerald
 import SwiftUI
 
-class DemoCard: Card {
+class DemoCard: Token, FlatToken {
     
     @Published var side: FlipSide = .front
     
-    let id = UUID()
     let front: DemoCardFace
     let back: DemoCardFace?
     
     init(front: DemoCardFace, back: DemoCardFace) {
         self.front = front
         self.back = back
+        
+        super.init()
     }
     
     func canInteract(with other: DemoCard) -> Bool {
