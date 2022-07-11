@@ -23,7 +23,7 @@ struct DemoSpaceView: View {
                 .offset(x: 0, y: .s * index)
                 .brightness(-0.25 * Double(index) / count)
         } placeholder: {
-            DemoCardFaceView.shapeView(backgroundColor: .estuco)
+            DemoCardFaceView.shapeView(backgroundColor: .delfino.darkened(by: 0.25))
                 .aspectRatio(CGSize(width: 1, height: 1.25), contentMode: .fit)
         } highlight: {
             DemoCardFaceView.shapeView(backgroundColor: .clear, borderColor: .berilo)

@@ -56,6 +56,7 @@ struct ContentView: View {
             .background(Color.estuco)
             .accentColor(.berilo)
         }
+        .background(Color.delfino)
     }
     
     // MARK: - Private
