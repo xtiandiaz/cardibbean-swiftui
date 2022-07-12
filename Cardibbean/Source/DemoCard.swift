@@ -33,6 +33,17 @@ class DemoCard: Token, FlatToken {
 
 extension DemoCard {
     
+    static func createRandom() -> DemoCard {
+        let randomType: [CardType] = [
+            .player,
+            .merchant,
+            .monster(.kraken),
+            .pirate(.lieutenant)
+        ]
+        
+        return DemoCard.create(for: randomType.randomElement()!)
+    }
+    
     static func create(for type: CardType) -> DemoCard {
         switch type {
         default:

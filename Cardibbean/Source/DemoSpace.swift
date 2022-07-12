@@ -28,7 +28,6 @@ struct DemoSpaceView: View {
         } highlight: {
             DemoCardFaceView.shapeView(backgroundColor: .clear, borderColor: .berilo)
                 .aspectRatio(CGSize(width: 1, height: 1.25), contentMode: .fit)
-                .transition(.opacity)
         }
         .frame(width: 100)
     }

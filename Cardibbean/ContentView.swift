@@ -28,26 +28,29 @@ struct ContentView: View {
                 }
                 .padding([.vertical], .xl)
             }
+            .gesture(DragGesture(minimumDistance: 0).onEnded {
+                board.dropToken(DemoCard.createRandom(), at: $0.location)
+            })
             
             Form {
                 Group {
-                    HStack {
-                        Stepper("\(board.spaces.first!.tokenCount) cards") {
-                            board.spaces.first!.place(token: card())
-                        } onDecrement: {
-                            _ = board.spaces.first!.take(at: .zero)
-                        }
-                        .tint(.berilo)
-                    }
+//                    HStack {
+//                        Stepper("\(board.spaces.first!.tokenCount) cards") {
+//                            board.spaces.first!.place(token: )
+//                        } onDecrement: {
+//                            _ = board.spaces.first!.take(at: .zero)
+//                        }
+//                        .tint(.berilo)
+//                    }
                     
-                    Button("Transfer") {
-                        withAnimation(.easeOut) {
-                            if let card = board.spaces.first!.take(at: .zero) {
-                                board.spaces.last!.place(token: card)
+//                    Button("Transfer") {
+//                        withAnimation(.easeOut) {
+//                            if let card = board.spaces.first!.take(at: .zero) {
+//                                board.spaces.last!.place(token: card)
 //                                _ = board.spaces.first!.take(at: .zero)
-                            }
-                        }
-                    }
+//                            }
+//                        }
+//                    }
                 }
                 .listRowSeparatorTint(.greenwich)
                 .listRowBackground(Color.blancox)
@@ -60,10 +63,7 @@ struct ContentView: View {
     }
     
     // MARK: - Private
-    
-    private func card() -> DemoCard {
-        DemoCard.create(for: [.player, .merchant, .monster(.kraken), .pirate(.lieutenant)].randomElement()!)
-    }
+
 }
 
 struct ContentView_Previews: PreviewProvider {
