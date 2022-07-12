@@ -26,7 +26,6 @@ struct ContentView: View {
                         DemoSpaceView(space: $0)
                     }
                 }
-                .padding([.vertical], .xl)
             }
             .gesture(DragGesture(minimumDistance: 0).onEnded {
                 board.dropToken(DemoCard.createRandom(), at: $0.location)

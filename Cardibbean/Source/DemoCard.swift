@@ -54,3 +54,10 @@ extension DemoCard {
         }
     }
 }
+
+extension DemoCard: CustomDebugStringConvertible {
+    
+    var debugDescription: String {
+        "\(front.type)"
+    }
+}

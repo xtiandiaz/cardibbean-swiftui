@@ -18,10 +18,8 @@ struct DemoSpaceView: View {
     @ObservedObject private(set) var space: DemoSpace
     
     var body: some View {
-        CollectionSpaceView(space: space) { index, count, token in
-            DemoCardView(card: token)
-                .offset(x: 0, y: .s * index)
-                .brightness(-0.25 * Double(index) / count)
+        CollectionSpaceView(space: space) {
+            DemoCardView(card: $0)
         } placeholder: {
             DemoCardFaceView.shapeView(backgroundColor: .delfino.darkened(by: 0.25))
                 .aspectRatio(CGSize(width: 1, height: 1.25), contentMode: .fit)
