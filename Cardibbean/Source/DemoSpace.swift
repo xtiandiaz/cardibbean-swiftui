@@ -19,9 +19,7 @@ struct DemoSpaceView: View {
     
     var body: some View {
         SpaceView(space: space) {
-//            ForEach(space.collection) {
-                DemoCardView(card: $0)
-//            }
+            DemoCardView(card: $0)
         } placeholder: {
             DemoCardFaceView.shapeView(backgroundColor: .delfino.darkened(by: 0.1))
         } highlight: {

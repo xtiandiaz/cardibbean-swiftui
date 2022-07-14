@@ -20,38 +20,42 @@ struct ContentView: View {
     }
     
     var body: some View {
-        VStack {
             BoardView(board: board) { spaces in
-                SpaceGroupView(spaces: Array(spaces.prefix(upTo: 3))) { spaces in
-                    HStack {
-                        ForEach(spaces) {
-                            switch $0 {
-                            case let space as DemoSpace:
-                                DemoSpaceView(space: space)
-                            default:
-                                EmptyView()
+                VStack {
+                    SpaceGroupView(spaces: Array(spaces.prefix(upTo: 3))) { spaces in
+                        HStack {
+                            ForEach(spaces) {
+                                switch $0 {
+                                case let space as DemoSpace:
+                                    DemoSpaceView(space: space)
+                                default:
+                                    EmptyView()
+                                }
+                            }
+                        }
+                    }
+                    
+                    Spacer()
+                        .frame(height: .xxl)
+
+                    SpaceGroupView(spaces: Array(spaces.suffix(from: 3))) { spaces in
+                        HStack {
+                            ForEach(spaces) {
+                                switch $0 {
+                                case let space as DemoSpace:
+                                    DemoSpaceView(space: space)
+                                default:
+                                    EmptyView()
+                                }
                             }
                         }
                     }
                 }
-
-                Spacer()
-                    .frame(height: .xxl)
-
-                SpaceGroupView(spaces: Array(spaces.suffix(from: 3))) { spaces in
-                    HStack {
-                        ForEach(spaces) {
-                            switch $0 {
-                            case let space as DemoSpace:
-                                DemoSpaceView(space: space)
-                            default:
-                                EmptyView()
-                            }
-                        }
-                    }
-                }
+                .padding()
+                .edgesIgnoringSafeArea(.all)
+                .frame(maxHeight: .infinity)
+                .background(Color.delfino)
             }
-            .padding()
             .gesture(DragGesture(minimumDistance: 0).onEnded {
                 board.dropToken(DemoCard.createRandom(), at: $0.location)
             })
@@ -95,9 +99,6 @@ struct ContentView: View {
 //            .foregroundColor(.crudo)
 //            .background(Color.estuco)
 //            .accentColor(.berilo)
-        }
-        .background(Color.delfino)
-        .edgesIgnoringSafeArea(.all)
     }
     
     // MARK: - Private
