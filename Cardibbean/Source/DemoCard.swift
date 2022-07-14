@@ -11,7 +11,7 @@ import SwiftUI
 
 class DemoCard: Token, FlatToken {
     
-    @Published var side: FlipSide = .front
+    @Published var side: FlatTokenSide = .front
     
     let front: DemoCardFace
     let back: DemoCardFace?

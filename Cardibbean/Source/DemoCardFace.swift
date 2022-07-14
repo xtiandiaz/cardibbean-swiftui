@@ -12,7 +12,7 @@ import SwiftUI
 struct DemoCardFace: FlatTokenFace {
     
     let id = UUID()
-    let side: FlipSide
+    let side: FlatTokenSide
     let type: CardType
     let value: Int
     let motif: String

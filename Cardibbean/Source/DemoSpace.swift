@@ -18,15 +18,15 @@ struct DemoSpaceView: View {
     @ObservedObject private(set) var space: DemoSpace
     
     var body: some View {
-        CollectionSpaceView(space: space) {
-            DemoCardView(card: $0)
+        SpaceView(space: space) {
+//            ForEach(space.collection) {
+                DemoCardView(card: $0)
+//            }
         } placeholder: {
-            DemoCardFaceView.shapeView(backgroundColor: .delfino.darkened(by: 0.25))
-                .aspectRatio(CGSize(width: 1, height: 1.25), contentMode: .fit)
+            DemoCardFaceView.shapeView(backgroundColor: .delfino.darkened(by: 0.1))
         } highlight: {
-            DemoCardFaceView.shapeView(backgroundColor: .clear, borderColor: .berilo)
-                .aspectRatio(CGSize(width: 1, height: 1.25), contentMode: .fit)
+            DemoCardFaceView.shapeView(backgroundColor: .clear, borderColor: .white)
+                .transition(.opacity.animation(.easeOut(duration: 0.1)))
         }
-        .frame(width: 100)
     }
 }

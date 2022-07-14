@@ -325,7 +325,7 @@ enum CardType: Equatable {
         }
     }
     
-    func face(for side: FlipSide) -> DemoCardFace {
+    func face(for side: FlatTokenSide) -> DemoCardFace {
         DemoCardFace(
             side: side,
             type: self,

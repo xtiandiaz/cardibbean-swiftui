@@ -13,6 +13,7 @@ import SwiftUI
 struct ContentView: View {
     
     @StateObject private var board = DemoBoard()
+//    @StateObject private var handBoard = Board(spaces: [.ini(tokenAspect: CGSize(width: 1, height: 1.25))])
     
     init() {
         UITableView.appearance().backgroundColor = .clear
@@ -21,18 +22,55 @@ struct ContentView: View {
     var body: some View {
         VStack {
             BoardView(board: board) { spaces in
-                HStack {
-                    ForEach(spaces) {
-                        DemoSpaceView(space: $0)
+                SpaceGroupView(spaces: Array(spaces.prefix(upTo: 3))) { spaces in
+                    HStack {
+                        ForEach(spaces) {
+                            switch $0 {
+                            case let space as DemoSpace:
+                                DemoSpaceView(space: space)
+                            default:
+                                EmptyView()
+                            }
+                        }
+                    }
+                }
+
+                Spacer()
+                    .frame(height: .xxl)
+
+                SpaceGroupView(spaces: Array(spaces.suffix(from: 3))) { spaces in
+                    HStack {
+                        ForEach(spaces) {
+                            switch $0 {
+                            case let space as DemoSpace:
+                                DemoSpaceView(space: space)
+                            default:
+                                EmptyView()
+                            }
+                        }
                     }
                 }
             }
+            .padding()
             .gesture(DragGesture(minimumDistance: 0).onEnded {
                 board.dropToken(DemoCard.createRandom(), at: $0.location)
             })
+
+//            BoardView(board: handBoard) { spaces in
+//                HandSpaceView(space: spaces[0]) {
+//                    DemoCardView(card: $0)
+//                } placeholder: {
+//                    Rectangle().fill(.black.withAlphaComponent(0.15))
+//                } highlight: {
+//                    EmptyView()
+//                }
+//            }
+//            .gesture(DragGesture(minimumDistance: 0).onEnded {
+//                handBoard.dropToken(DemoCard.createRandom(), at: $0.location)
+//            })
             
-            Form {
-                Group {
+//            Form {
+//                Group {
 //                    HStack {
 //                        Stepper("\(board.spaces.first!.tokenCount) cards") {
 //                            board.spaces.first!.place(token: )
@@ -50,15 +88,16 @@ struct ContentView: View {
 //                            }
 //                        }
 //                    }
-                }
-                .listRowSeparatorTint(.greenwich)
-                .listRowBackground(Color.blancox)
-            }
-            .foregroundColor(.crudo)
-            .background(Color.estuco)
-            .accentColor(.berilo)
+//                }
+//                .listRowSeparatorTint(.greenwich)
+//                .listRowBackground(Color.blancox)
+//            }
+//            .foregroundColor(.crudo)
+//            .background(Color.estuco)
+//            .accentColor(.berilo)
         }
         .background(Color.delfino)
+        .edgesIgnoringSafeArea(.all)
     }
     
     // MARK: - Private

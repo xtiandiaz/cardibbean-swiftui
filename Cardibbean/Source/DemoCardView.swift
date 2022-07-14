@@ -24,7 +24,6 @@ struct DemoCardView: View {
         } back: {
             DemoCardFaceView(face: $0!)
         }
-        .aspectRatio(CGSize(width: 1, height: 1.25), contentMode: .fit)
         .onTapGesture {
             card.side.toggle()
         }
