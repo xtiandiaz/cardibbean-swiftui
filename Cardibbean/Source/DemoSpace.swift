@@ -11,6 +11,10 @@ import Foundation
 import SwiftUI
 
 class DemoSpace: StackSpace<DemoCard> {
+    
+    override var tokenCapacity: Int {
+        2
+    }
 }
 
 struct DemoSpaceView: View {

@@ -13,7 +13,7 @@ import SwiftUI
 class DemoBoard: Board {
     
     init() {
-        super.init(spaces: (0..<6).map { _ in Self.space() })
+        super.init(spaces: (0..<9).map { _ in Self.space() })
     }
     
     // MARK: - Private
@@ -23,7 +23,7 @@ class DemoBoard: Board {
             layout: .init(tokenAspect: CGSize(width: 1, height: 1.25)) {
                 CGSize(height: .s * $0.index)
             } tokenRotation: { _ in
-                Angle(degrees: Double.random(in: -2...2))
+                Angle(degrees: Double.random(in: -1.5...1.5))
             },
             styling: .init {
                 -0.25 * $0.layout.index / $0.count

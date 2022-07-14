@@ -20,45 +20,28 @@ struct ContentView: View {
     }
     
     var body: some View {
-            BoardView(board: board) { spaces in
-                VStack {
-                    SpaceGroupView(spaces: Array(spaces.prefix(upTo: 3))) { spaces in
-                        HStack {
-                            ForEach(spaces) {
-                                switch $0 {
-                                case let space as DemoSpace:
-                                    DemoSpaceView(space: space)
-                                default:
-                                    EmptyView()
-                                }
-                            }
-                        }
-                    }
-                    
-                    Spacer()
-                        .frame(height: .xxl)
-
-                    SpaceGroupView(spaces: Array(spaces.suffix(from: 3))) { spaces in
-                        HStack {
-                            ForEach(spaces) {
-                                switch $0 {
-                                case let space as DemoSpace:
-                                    DemoSpaceView(space: space)
-                                default:
-                                    EmptyView()
-                                }
-                            }
-                        }
+        VStack {
+            Spacer()
+            
+            BoardView(board: board) {
+                SpaceGrid(spaces: $0, cols: 3, spacing: CGSize(length: .ms)) {
+                    switch $0 {
+                    case let space as DemoSpace:
+                        DemoSpaceView(space: space)
+                    default:
+                        EmptyView()
                     }
                 }
-                .padding()
-                .edgesIgnoringSafeArea(.all)
-                .frame(maxHeight: .infinity)
-                .background(Color.delfino)
+                .padding(.m)
             }
             .gesture(DragGesture(minimumDistance: 0).onEnded {
                 board.dropToken(DemoCard.createRandom(), at: $0.location)
             })
+            
+            Spacer()
+        }
+        .edgesIgnoringSafeArea(.all)
+        .background(Color.delfino)
 
 //            BoardView(board: handBoard) { spaces in
 //                HandSpaceView(space: spaces[0]) {
