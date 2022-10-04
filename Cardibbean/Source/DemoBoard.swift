@@ -16,6 +16,10 @@ class DemoBoard: Board {
         super.init(spaces: (0..<9).map { _ in Self.space() })
     }
     
+//    override func nextSpace(for token: Token, from space: AnySpace, toward direction: Direction) -> AnySpace? {
+//        spaces.randomElement()!
+//    }
+    
     // MARK: - Private
     
     private static func space() -> DemoSpace {

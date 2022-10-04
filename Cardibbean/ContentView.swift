@@ -35,13 +35,14 @@ struct ContentView: View {
                 .padding(.m)
             }
             .gesture(DragGesture(minimumDistance: 0).onEnded {
-                board.dropToken(DemoCard.createRandom(), at: $0.location)
+                board.deal(DemoCard.createRandom(), at: $0.location)
             })
+            .environment(\.fonts, .custom)
             
             Spacer()
         }
         .edgesIgnoringSafeArea(.all)
-        .background(Color.delfino)
+        .background(Color.cielo)
 
 //            BoardView(board: handBoard) { spaces in
 //                HandSpaceView(space: spaces[0]) {

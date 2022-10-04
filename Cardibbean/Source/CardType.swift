@@ -295,14 +295,14 @@ enum CardType: Equatable {
     var foregroundColor: Color {
         switch self {
         case .resource(let resource): return resource.color
-        default: return backgroundColor.accessibleFontColor
+        default: return backgroundColor.body
         }
     }
     
     var backgroundColor: Color {
         switch self {
         case .player: return .limoncello
-        case .crate: return .delfino
+        case .crate: return .cielo
         case .resource, .weapon, .monsterPart: return .estuco
         case .device: return .tangelo
         case .monster: return .purpolo
@@ -314,7 +314,7 @@ enum CardType: Equatable {
     
     var borderColor: Color? {
         switch self {
-        case .weapon: return .roca
+        case .weapon: return .quartz
         case .monsterPart: return .purpolo
         case .resource(let resource):
             switch resource {

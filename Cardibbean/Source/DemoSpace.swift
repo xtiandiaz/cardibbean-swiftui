@@ -11,10 +11,6 @@ import Foundation
 import SwiftUI
 
 class DemoSpace: StackSpace<DemoCard> {
-    
-    override var tokenCapacity: Int {
-        2
-    }
 }
 
 struct DemoSpaceView: View {
@@ -25,7 +21,7 @@ struct DemoSpaceView: View {
         SpaceView(space: space) {
             DemoCardView(card: $0)
         } placeholder: {
-            DemoCardFaceView.shapeView(backgroundColor: .delfino.darkened(by: 0.1))
+            DemoCardFaceView.shapeView(backgroundColor: .cielo.darkened(by: 0.1))
         } highlight: {
             DemoCardFaceView.shapeView(backgroundColor: .clear, borderColor: .white)
                 .transition(.opacity.animation(.easeOut(duration: 0.1)))
