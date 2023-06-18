@@ -23,8 +23,8 @@ struct ContentView: View {
         VStack {
             Spacer()
             
-            BoardView(board: board) {
-                SpaceGrid(spaces: $0, cols: 3, spacing: CGSize(length: .ms)) {
+            UIBoardView(board: board) {
+                UISpaceGrid(spaces: $0, cols: 3, spacing: CGSize(length: .ms)) {
                     switch $0 {
                     case let space as DemoSpace:
                         DemoSpaceView(space: space)

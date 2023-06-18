@@ -10,7 +10,7 @@ import Emerald
 import Foundation
 import SwiftUI
 
-class DemoSpace: StackSpace<DemoCard> {
+class DemoSpace: UIStackSpace<DemoCard> {
 }
 
 struct DemoSpaceView: View {
@@ -18,7 +18,7 @@ struct DemoSpaceView: View {
     @ObservedObject private(set) var space: DemoSpace
     
     var body: some View {
-        SpaceView(space: space) {
+        UISpaceView(space: space) {
             DemoCardView(card: $0)
         } placeholder: {
             DemoCardFaceView.shapeView(backgroundColor: .cielo.darkened(by: 0.1))

@@ -9,7 +9,7 @@ import BerilioUI
 import Emerald
 import SwiftUI
 
-class DemoCard: Token, FlatToken {
+class DemoCard: UIToken, FlatToken {
     
     @Published var side: FlatTokenSide = .front
     

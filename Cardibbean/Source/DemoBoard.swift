@@ -10,7 +10,7 @@ import Emerald
 import Foundation
 import SwiftUI
 
-class DemoBoard: Board {
+class DemoBoard: UIBoard {
     
     init() {
         super.init(spaces: (0..<9).map { _ in Self.space() })
