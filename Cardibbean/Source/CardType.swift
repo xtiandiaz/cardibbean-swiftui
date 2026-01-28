@@ -142,8 +142,8 @@ enum Resource: Equatable {
     
     var color: Color {
         switch self {
-        case .food: return .lipstick
-        case .ammo: return .crudo
+        case .food: return .red
+        case .ammo: return .black
         }
     }
     
@@ -202,9 +202,9 @@ enum Ship: Equatable {
     
     var backgroundColor: Color {
         switch self {
-        case .player: return .limoncello
+        case .player: return .yellow
         case .pirate(let pirate): return pirate.backgroundColor
-        case .merchant: return .rey
+        case .merchant: return .indigo
         }
     }
 }
@@ -228,7 +228,7 @@ enum Pirate: Int {
     }
     
     var backgroundColor: Color {
-        .segway
+        .black.lightened(by: 0.1)
     }
 }
 
@@ -295,31 +295,31 @@ enum CardType: Equatable {
     var foregroundColor: Color {
         switch self {
         case .resource(let resource): return resource.color
-        default: return backgroundColor.body
+        default: return .primary
         }
     }
     
     var backgroundColor: Color {
         switch self {
-        case .player: return .limoncello
-        case .crate: return .cielo
-        case .resource, .weapon, .monsterPart: return .estuco
-        case .device: return .tangelo
-        case .monster: return .purpolo
+        case .player: return .yellow
+        case .crate: return .blue
+        case .resource, .weapon, .monsterPart: return .black.lightened(by: 0.25)
+        case .device: return .orange
+        case .monster: return .purple
         case .ship(let ship): return ship.backgroundColor
         case .pirate(let pirate): return pirate.backgroundColor
-        case .merchant: return .rey
+        case .merchant: return .indigo
         }
     }
     
     var borderColor: Color? {
         switch self {
-        case .weapon: return .quartz
-        case .monsterPart: return .purpolo
+        case .weapon: return .gray
+        case .monsterPart: return .purple
         case .resource(let resource):
             switch resource {
-            case .ammo: return .tangelo
-            case .food: return .lipstick
+            case .ammo: return .orange
+            case .food: return .red
             }
         default: return nil
         }

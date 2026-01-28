@@ -5,7 +5,6 @@
 //  Created by Cristian Diaz on 8.7.2022.
 //
 
-import BerilioUI
 import Emerald
 import Foundation
 import SwiftUI
@@ -19,10 +18,12 @@ struct DemoCardFaceView: FlatTokenFaceView {
             Self.shapeView(backgroundColor: face.backgroundColor, borderColor: face.borderColor)
             
             Text("\(face.value)")
-                .font(.title, color: face.borderColor ?? face.backgroundColor.body)
+                .font(.title)
+                .bold()
                 .padding(EdgeInsets(top: .xs, leading: 0, bottom: 0, trailing: .s))
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-            
+                .foregroundStyle(.white)
+
             Text(face.motif)
                 .font(.system(size: .xxl))
                 .offset(y: .s)

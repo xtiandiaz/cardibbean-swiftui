@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9811597D28ECCD23009DBB1A /* FontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9811597C28ECCD23009DBB1A /* FontExtensions.swift */; };
-		9811598128ECCE06009DBB1A /* Banksia-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9811598028ECCE06009DBB1A /* Banksia-Black.ttf */; };
-		982B9D252874BB7D003D3AD3 /* BerilioUI in Frameworks */ = {isa = PBXBuildFile; productRef = 982B9D242874BB7D003D3AD3 /* BerilioUI */; };
 		982B9D2D28765583003D3AD3 /* DemoBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982B9D2C28765583003D3AD3 /* DemoBoard.swift */; };
 		982B9D2F2877252E003D3AD3 /* DemoSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982B9D2E2877252E003D3AD3 /* DemoSpace.swift */; };
 		982B9D352878865F003D3AD3 /* CardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982B9D342878865F003D3AD3 /* CardType.swift */; };
@@ -26,10 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9811597C28ECCD23009DBB1A /* FontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FontExtensions.swift; path = Source/FontExtensions.swift; sourceTree = "<group>"; };
 		9811597E28ECCDA5009DBB1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		9811598028ECCE06009DBB1A /* Banksia-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Banksia-Black.ttf"; path = "Fonts/Banksia-Black.ttf"; sourceTree = "<group>"; };
-		982B9D232874BB6C003D3AD3 /* BerilioUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = BerilioUI; sourceTree = "<group>"; };
 		982B9D2C28765583003D3AD3 /* DemoBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DemoBoard.swift; path = Source/DemoBoard.swift; sourceTree = "<group>"; };
 		982B9D2E2877252E003D3AD3 /* DemoSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DemoSpace.swift; path = Source/DemoSpace.swift; sourceTree = "<group>"; };
 		982B9D342878865F003D3AD3 /* CardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardType.swift; path = Source/CardType.swift; sourceTree = "<group>"; };
@@ -52,26 +46,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				98E34CCA287490D300930789 /* Emerald in Frameworks */,
-				982B9D252874BB7D003D3AD3 /* BerilioUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9811597B28ECCD0E009DBB1A /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				9811597C28ECCD23009DBB1A /* FontExtensions.swift */,
-			);
-			name = Extensions;
-			sourceTree = "<group>";
-		};
 		9811597F28ECCDDD009DBB1A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				98E34CBC2874907C00930789 /* Assets.xcassets */,
-				9811598028ECCE06009DBB1A /* Banksia-Black.ttf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -119,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				9811597E28ECCDA5009DBB1A /* Info.plist */,
-				9811597B28ECCD0E009DBB1A /* Extensions */,
 				98E34CB82874907B00930789 /* CardibbeanApp.swift */,
 				98E34CBA2874907B00930789 /* ContentView.swift */,
 				982B9D2E2877252E003D3AD3 /* DemoSpace.swift */,
@@ -143,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				98E34CC7287490CC00930789 /* Emerald */,
-				982B9D232874BB6C003D3AD3 /* BerilioUI */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -173,7 +155,6 @@
 			name = Cardibbean;
 			packageProductDependencies = (
 				98E34CC9287490D300930789 /* Emerald */,
-				982B9D242874BB7D003D3AD3 /* BerilioUI */,
 			);
 			productName = Cardibbean;
 			productReference = 98E34CB52874907B00930789 /* Cardibbean.app */;
@@ -203,6 +184,8 @@
 				Base,
 			);
 			mainGroup = 98E34CAC2874907B00930789;
+			packageReferences = (
+			);
 			productRefGroup = 98E34CB62874907B00930789 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -217,7 +200,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9811598128ECCE06009DBB1A /* Banksia-Black.ttf in Resources */,
 				98E34CC02874907C00930789 /* Preview Assets.xcassets in Resources */,
 				98E34CBD2874907C00930789 /* Assets.xcassets in Resources */,
 			);
@@ -236,7 +218,6 @@
 				982B9D352878865F003D3AD3 /* CardType.swift in Sources */,
 				982B9D2F2877252E003D3AD3 /* DemoSpace.swift in Sources */,
 				98E34CB92874907B00930789 /* CardibbeanApp.swift in Sources */,
-				9811597D28ECCD23009DBB1A /* FontExtensions.swift in Sources */,
 				982B9D2D28765583003D3AD3 /* DemoBoard.swift in Sources */,
 				982B9D37287886A7003D3AD3 /* CardAttribute.swift in Sources */,
 				982B9D3F287889FE003D3AD3 /* DemoCardFaceView.swift in Sources */,
@@ -371,7 +352,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Cardibbean/Preview Content\"";
-				DEVELOPMENT_TEAM = 5RLDR367YX;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cardibbean/Info.plist;
@@ -379,16 +360,15 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = io.beril.Cardibbean;
+				PRODUCT_BUNDLE_IDENTIFIER = some.bundle.cardibbean;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -404,7 +384,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Cardibbean/Preview Content\"";
-				DEVELOPMENT_TEAM = 5RLDR367YX;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cardibbean/Info.plist;
@@ -412,16 +392,15 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = io.beril.Cardibbean;
+				PRODUCT_BUNDLE_IDENTIFIER = some.bundle.cardibbean;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -453,10 +432,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		982B9D242874BB7D003D3AD3 /* BerilioUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = BerilioUI;
-		};
 		98E34CC9287490D300930789 /* Emerald */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Emerald;
